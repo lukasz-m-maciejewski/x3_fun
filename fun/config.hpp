@@ -8,13 +8,14 @@
 #define BOOST_SPIRIT_X3_FUN_CONFIG_HPP
 
 #include <boost/spirit/home/x3.hpp>
+#include <boost/spirit/home/x3/directive/with.hpp>
 #include "error_handler.hpp"
 
 namespace fun { namespace parser
 {
     // CONFIG_VISIT_BEGIN
     // Our Iterator Type
-    typedef std::string::const_iterator iterator_type;
+    using iterator_type = std::string::const_iterator;
 
     // The Phrase Parse Context
     typedef
@@ -25,11 +26,10 @@ namespace fun { namespace parser
     typedef error_handler<iterator_type> error_handler_type;
 
     // Combined Error Handler and Phrase Parse Context
-    typedef x3::with_context<
-        error_handler_tag
-      , std::reference_wrapper<error_handler_type> const
-      , phrase_context_type>::type
-    context_type;
+    using context_type = x3::context<error_handler_tag,
+                                     std::reference_wrapper<error_handler_type> const,
+                                     phrase_context_type>;
+
     // CONFIG_VISIT_END
 }}
 
