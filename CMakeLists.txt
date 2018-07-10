@@ -14,3 +14,6 @@ add_library(x3_fun
   src/expression.cpp
   src/interpreter.cpp
   src/printer.cpp)
+
+target_include_directories(x3_fun PUBLIC
+    ${CMAKE_SOURCE_DIR}/fun)
