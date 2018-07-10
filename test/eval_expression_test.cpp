@@ -11,11 +11,11 @@
 #include <iomanip>
 #include <cmath>
 
-#include "../fun/ast.hpp"
-#include "../fun/expression.hpp"
-#include "../fun/error_handler.hpp"
-#include "../fun/config.hpp"
-#include "../fun/interpreter.hpp"
+#include "ast.hpp"
+#include "expression.hpp"
+#include "error_handler.hpp"
+#include "config.hpp"
+#include "interpreter.hpp"
 
 #include <boost/spirit/home/x3/support/utility/testing.hpp>
 
